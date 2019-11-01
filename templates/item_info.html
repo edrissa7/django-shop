@@ -1,0 +1,216 @@
+{%extends "base.html"%}
+{%load static%}
+
+{%block content%}
+   <!-- item information starts here -->
+   <div class="container-fluid">
+    <div class="content-wrapper">	
+		<div class="item-container">	
+			<div class="container">	
+				<div class="col-md-12">
+					<div class="product col-md-3 service-image-left">
+                    
+						<center>
+							<img id="item-display" src="{%static "img/nicePicture.jpg"%}" alt=""></img>
+						</center>
+					</div>
+					
+					<div class="container service1-items col-sm-2 col-md-2 pull-left">
+						<center>
+							<a id="item-1" class="service1-item">
+								<img src="{%static "img/nicePicture.jpg"%}" alt=""></img>
+							</a>
+							<a id="item-2" class="service1-item">
+								<img src="{%static "img/nicePicture.jpg"%}" alt=""></img>
+							</a>
+							<a id="item-3" class="service1-item">
+								<img src="{%static "img/nicePicture.jpg"%}" alt=""></img>
+							</a>
+						</center>
+					</div>
+				</div>
+					
+				<div class="col-md-7">
+					<div class="product-title">{{items.gp_name}}
+                    <p><a id="category" href="{%url 'category:category' items.gp_category%}">{{items.gp_category}}</a></p>
+                    </div>
+					<div class="product-desc">{{items.gp_description}}</div>
+					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
+					<hr>
+					<div class="product-price">D {{items.gp_price}}
+                     <p id="state">{{items.gp_state}}</p>
+                    </div>
+					<div class="product-stock">{{items.gp_quantity}} In Stock</div>
+					<hr>
+					<div class="btn-group cart">
+				    </div>
+					<div class="btn-group wishlist">
+						<button type="button" class="btn btn-danger">
+							Add to wishlist 
+						</button>
+					</div>
+				</div>
+			</div> 
+		</div>
+		<div class="container-fluid">		
+			<div class="col-md-12 product-info">
+					<ul id="myTab" class="nav nav-tabs nav_tabs">
+                        
+						<li class="active"><a href="#service-one" data-toggle="tab">Product Info</a></li>
+						<li><a href="#service-two" data-toggle="tab">Reviews</a></li>
+                        
+					</ul>
+                
+				<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade in active" id="service-one">
+						 
+							<section class="container product-info">
+				          
+                            {%if more_items%}
+                              <ul>                 
+                             {%for x in more_items%}
+                             <li>{{x}}</li>
+                                 {%endfor%}                 
+                                   </ul>
+                                     {%else%}
+                                       <p>No extra info..</p>
+                                          {%endif%}
+                            
+							</section>
+										  
+						</div>
+					<div class="tab-pane fade" id="service-two">
+						
+						<section class="container">
+								 Product Review Part
+						</section>
+						
+					</div>
+					
+				</div>
+				<hr>
+			</div>
+		</div>
+	</div>
+</div>
+  <!-- item information ends-->
+        
+<div class="row"><div class="col-md-12 bg-success">
+      </div></div>
+
+<h1>Related Items</h1>
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <!-- item block-->
+      <div class="col-sm-3">
+          <!-- Related items to be displayed here -->
+        <div class="container">        
+        <div class="row">
+             <div class="col-md-3">
+            <div class="card" style="width: 17rem;">
+  <img src="{% static "img/default.png" %}" width="140" height="170" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size:0.8em;">samsung</h5>
+      <p class="card-text"><small>Price:</small><i>23,000</i></p>
+      <p class="card-text"><small>State:</small><b>New</b></p>
+      <p class="card-text"><small>Views:</small><b>0</b></p>
+    <a href="#" style="font-size:0.9em;">More Info&raquo;</a>
+      </div>
+       </div>
+          </div>
+                             
+          </div>         
+          </div>
+           <!--Related items end-->
+          
+        </div>
+      <!-- item block ends-->
+        <!-- item block-->
+      <div class="col-sm-3">
+          <!-- Related items to be displayed here -->
+        <div class="container">        
+        <div class="row">
+             <div class="col-md-3">
+            <div class="card" style="width: 17rem;">
+  <img src="{% static "img/default.png" %}" width="140" height="170" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size:0.8em;">samsung</h5>
+      <p class="card-text"><small>Price:</small><i>23,000</i></p>
+      <p class="card-text"><small>State:</small><b>New</b></p>
+      <p class="card-text"><small>Views:</small><b>0</b></p>
+    <a href="#" style="font-size:0.9em;">More Info&raquo;</a>
+      </div>
+       </div>
+          </div>
+                             
+          </div>         
+          </div>
+           <!--Related items end-->
+          
+        </div>
+      <!-- item block ends-->
+        <!-- item block-->
+      <div class="col-md-3">
+          <!-- Related items to be displayed here -->
+        <div class="container">        
+        <div class="row">
+             <div class="col-md-3">
+            <div class="card" style="width: 17rem;">
+  <img src="{% static "img/default.png" %}" width="140" height="170" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size:0.8em;">samsung</h5>
+      <p class="card-text"><small>Price:</small><i>23,000</i></p>
+      <p class="card-text"><small>State:</small><b>New</b></p>
+      <p class="card-text"><small>Views:</small><b>0</b></p>
+    <a href="#" style="font-size:0.9em;">More Info&raquo;</a>
+      </div>
+       </div>
+          </div>
+                             
+          </div>         
+          </div>
+           <!--Related items end-->
+          
+        </div>
+      <!-- item block ends-->
+        <!-- item block-->
+      <div class="col-md-3">
+          <!-- Related items to be displayed here -->
+        <div class="container">        
+        <div class="row">
+             <div class="col-md-3">
+            <div class="card" style="width: 17rem;">
+  <img src="{% static "img/default.png" %}" width="140" height="170" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size:0.8em;">samsung</h5>
+      <p class="card-text"><small>Price:</small><i>23,000</i></p>
+      <p class="card-text"><small>State:</small><b>New</b></p>
+      <p class="card-text"><small>Views:</small><b>0</b></p>
+    <a href="#" style="font-size:0.9em;">More Info&raquo;</a>
+      </div>
+       </div>
+          </div>
+                             
+          </div>         
+          </div>
+           <!--Related items end-->
+          
+        </div>
+      <!-- item block ends-->
+      
+    </div>
+      <!--row of colunms ends-->
+      <button class="btn">Show more</button>
+      
+      <!--ads section-->
+            <div class="col-md-3 bg-success" >
+                <h1>ads</h1>
+            </div>
+    <!--ads section ends-->
+    <hr>
+
+  </div> <!-- /container -->
+
+
+{%endblock%}

@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block content%}
+
+<div class="container">
+        <!--  items to be displayed here -->
+        <div class="row">
+            {%if object%}
+            {% for x in object%}
+          <div class="col-md-3">
+            <div class="card" style="width: 17rem;">
+  <img src="{% static "img/default.png" %}" width="140" height="170" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size:0.8em;">{{x.gp_name}}</h5>
+      <p class="card-text"><small>Price:</small><i>{{x.gp_price}}</i></p>
+      <p class="card-text"><small>State:</small><b>{{x.gp_state}}</b></p>
+      <p class="card-text"><small>Views:</small><b>0</b></p>
+    <a href="#" style="font-size:0.9em;">More Info&raquo;</a>
+      </div>
+       </div>
+          </div>
+            {%endfor%}
+            {%else%}
+            <h2>No products Sorry..</h2>
+            {%endif%}
+                    
+          </div>
+          <!-- items end-->
+        </div>
+{%endblock%}

@@ -1,0 +1,46 @@
+body{
+background-color: gainsboro;
+    
+}
+
+#tag{
+    width:60px;
+    height:40px;
+    margin-top: 60px;
+    background-color: skyblue;    
+ }
+
+
+.form-control{
+    margin-left: 0px;  
+    
+   }
+
+.navbar-nav{
+    margin-left: 0px;
+    
+    
+}
+
+.carousel slide{
+    height: 300px;
+    background-color:aqua;
+    
+}
+
+#mainPageAd{
+    max-height: 300px;
+    overflow:scroll;
+    padding:0px;
+    
+}
+
+.pagination{
+    margin-left: 578px;    
+}
+
+@media only screen and (max-width: 770px) {
+  body {
+    background-color: red;
+  }
+}

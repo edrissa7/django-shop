@@ -1,0 +1,67 @@
+{%extends "base.html"%}
+{%load static%}
+
+{%block content%}
+
+<div style="background-color:beige; max-width: 100%;">
+<marquee behavior="scroll" direction="left">
+Search filters will be added to ease searching as items increase in size
+</marquee>
+</div>
+ <div class="container">
+        <!-- Latest items to be displayed here -->
+        <div class="row">
+            {% if object_list%}
+            {%for x in object_list%}
+             <div class="col-md-3">
+            <div class="card" style="width: 17rem;">
+  <img src="{% static "img/default.png" %}" width="140" height="170" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size:0.8em;">{{x.gp_name}}</h5>
+      <p class="card-text"><small>Price:</small><i>{{x.gp_price}}</i></p>
+      <p class="card-text"><small>State:</small><b>{{x.gp_state}}</b></p>
+      <p class="card-text"><small>Views:</small><b>12</b></p>
+    <a href="#" style="font-size:0.9em;">More Info&raquo;</a>
+      </div>
+       </div>
+          </div>
+            {%endfor%}
+            {%else%}
+            <h3 style="margin-left:20px;">Sorry no products for search - <b>{{search_query}}</b></h3>
+            <br/>
+            <ul>
+                <li>Check the spelling and try again</li>
+                <li>Product is not available yet try again later!</li>
+            </ul>
+            
+            {%endif%}
+                             
+          </div>
+          <!--Latest items end-->
+        </div>
+  <!-- Pagination-->
+          
+  <ul class="pagination"> 
+      {%if object_list.has_previous%}
+      <li class="page-item">
+      <a class="page-link" href="?k={{search_query}}&page={{object_list.previous_page_number}}" aria-label="Previous">
+           <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li> 
+      {%endif%}
+      {%for x in paginate.page_range%}
+      <li class="page-item"><a class="page-link" href="?k={{search_query}}&page={{x}}">{{x}}</a></li>
+            {%endfor%}
+     
+      {% if object_list.has_next%}
+    <li class="page-item">
+      <a class="page-link" href="?k={{search_query}}&page={{object_list.next_page_number}}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+      {%endif%}
+         
+  </ul>
+          <!-- pagination ends-->
+<hr>
+{%endblock%}
