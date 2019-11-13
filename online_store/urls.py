@@ -21,7 +21,7 @@ from django.views.static import serve
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^store/',include('store.urls',namespace="store")),
+    url(r'^',include('store.urls',namespace="store")),
     url(r'^category/',include('category.urls',namespace="category")),
     url(r'^search/',include('search.urls',namespace="search"))
 ]
